@@ -1,0 +1,3 @@
+D:/wguclass/cmake-build-debug/CMakeFiles/wguclass.dir
+D:/wguclass/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/wguclass/cmake-build-debug/CMakeFiles/rebuild_cache.dir
