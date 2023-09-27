@@ -22,15 +22,6 @@ class student {
             age(ayge), daystoComplete{completion[0], completion[1], completion[3]}, degreeProgram(std::move(degree)) {};
 
     void getItem();
-    static bool inputcheck(std::string& in, std::string arr[]){
-        for(int i = 0; i <= 6; ++i) {
-            if (in == arr[i]) {
-                std::cout << "Valid input found!";
-                return true;
-            }
-        }
-        std::cout << "No valid input found!" << std::endl;
-        return false;
-    }
+    bool inputcheck();
 };
 #endif //WGUCLASS_STUDENTS_H
