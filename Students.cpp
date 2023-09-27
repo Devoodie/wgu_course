@@ -16,6 +16,16 @@ void student::getItem() {
             cout <<
         }
     }
+    bool student::inputcheck(std::string& in, std::string arr[]){
+        for(int i = 0; i <= 6; ++i) {
+            if (in == arr[i]) {
+                std::cout << "Valid input found!";
+                return true;
+            }
+        }
+        std::cout << "No valid input found!" << std::endl;
+        return false;
+    }
 
 }
 
