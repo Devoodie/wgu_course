@@ -13,19 +13,19 @@ void student::getItem() {
         string userin;
         cin >> userin;
         if(student::inputcheck(userin, items)){
-            cout <<
+        ;
         }
     }
-    bool student::inputcheck(std::string& in, std::string arr[]){
-        for(int i = 0; i <= 6; ++i) {
-            if (in == arr[i]) {
-                std::cout << "Valid input found!";
-                return true;
-            }
-        }
-        std::cout << "No valid input found!" << std::endl;
-        return false;
-    }
-
 }
+bool student::inputcheck(std::string& in, std::string arr[]){
+    for(int i = 0; i <= 6; ++i) {
+        if (in == arr[i]) {
+            std::cout << "Valid input found!";
+            return true;
+        }
+    }
+    std::cout << "No valid input found!" << std::endl;
+    return false;
+}
+
 
