@@ -20,9 +20,9 @@ class student {
             studentID(std::move(sID)), firstName(std::move(fName)), lastname(std::move(lName)),
             emailAddress(std::move(email)),
             age(ayge), daystoComplete{completion[0], completion[1], completion[3]}, degreeProgram(std::move(degree)) {};
-
-    void getItem();
+    void printItem();
     static bool inputcheck(std::string& in, std::string arr[]);
     void itemReturner(std::string& in, std::string arr[]);
+    void setItem();
 };
 #endif //WGUCLASS_STUDENTS_H

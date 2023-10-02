@@ -4,7 +4,7 @@
 #include "main.cpp"
 #include "Students.h"
 string items[] = {"id", "name", "email", "age", "major", "average"};
-void student::getItem() {
+void student::printItem() {
     cout << "Select data to fetch from " + firstName + " " + lastname + "! (lowercase only)" << endl;
     for (int i = 0; i <= size(items); ++i) {
         cout << items[i] << endl;
@@ -59,4 +59,6 @@ void student::itemReturner(std::string& in, std::string arr[]) {
     }
 
 }
-
+void student::setItem() {
+    ;
+}

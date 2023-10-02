@@ -5,5 +5,5 @@
 #ifndef WGUCLASS_DEGREE_H
 #define WGUCLASS_DEGREE_H
 #include <string>
-std::string degreeTypes[] = {"SECURITY", "NETWORK", "SOFTWARE"};
+enum degreeprogram {SECURITY, NETWORK, SOFTWARE};
 #endif //WGUCLASS_DEGREE_H
