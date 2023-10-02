@@ -23,5 +23,6 @@ class student {
 
     void getItem();
     static bool inputcheck(std::string& in, std::string arr[]);
+    void itemReturner(std::string& in, std::string arr[]);
 };
 #endif //WGUCLASS_STUDENTS_H
