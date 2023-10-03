@@ -12,8 +12,8 @@ class classRoster {
     vector<student*> roster;
     classRoster() : roster({}) {};
 public:
-    void add(string studentID, string firstName, string lastName, string emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeprogram degreeprogram){};
-    void remove(string studentID){};
+    void add(string& studentID, string& firstName, string& lastName, string& emailAddress, int age, int daysInCourse1, int daysInCourse2, int daysInCourse3, degreeprogram degreeprogram){};
+    void remove(string& studentID){};
     void printall();
     void printInvalidEmails();
 };

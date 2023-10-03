@@ -45,7 +45,7 @@ void student::itemReturner(std::string& in, std::string arr[]) {
                     cout << "AGE: " + to_string(age) << endl;
                     break;
                 case 4:
-                    cout << "MAJOR: " + degreeProgram << endl;
+                    cout << "MAJOR: " + to_string(major) << endl;
                     break;
                 case  5:
                     cout << "Average: " <<endl; //Make sure to verify they want the average of the three days or the total.
