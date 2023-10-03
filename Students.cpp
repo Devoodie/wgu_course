@@ -3,6 +3,7 @@
 //
 #include "main.cpp"
 #include "Students.h"
+#include "degree.h"
 string items[] = {"id", "name", "email", "age", "major", "average"};
 void student::printItem() {
     cout << "Select data to fetch from " + firstName + " " + lastname + "! (lowercase only)" << endl;
@@ -28,24 +29,87 @@ bool student::inputcheck(std::string& in, std::string arr[]){
     std::cout << "No valid input found!" << std::endl;
     return false;
 }
-void student::itemReturner(std::string& in, std::string arr[]) {
-    for(int i = 0; i <= size(items); ++i){
-        if (in == arr[i]){
-            switch (i){
+int student::itemReturner(std::string& in, std::string arr[]) {
+    for (int i = 0; i <= size(items); ++i) {
+        if (in == arr[i]) {
+            switch (i) {
                 case 0:
                     cout << "ID: " + studentID << endl;
-                    break;
+                    return i;
                 case 1:
-                    cout << "NAME: " + firstName + " " + lastname <<endl;
-                    break;
+                    cout << "NAME: " + firstName + " " + lastname << endl;
+                    return i;
                 case 2:
                     cout << "EMAIL: " + emailAddress << endl;
-                    break;
+                    return i;
                 case 3:
                     cout << "AGE: " + to_string(age) << endl;
-                    break;
+                    return i;
                 case 4:
                     cout << "MAJOR: " + to_string(major) << endl;
+                    return i;
+                case 5:
+                    cout << "Average: "
+                         << endl; //Make sure to verify they want the average of the three days or the total.
+                    return i;
+                default:
+                    cout << "Something went wrong!" << endl;
+                    return i;
+            }
+        }
+    }
+    return -1;
+}
+void student::setItem(string& in, degreeprogram) {
+    string placeholder;
+    cout << "Select data to edit from " + firstName + " " + lastname + "! (lowercase only)" << endl;
+    for (int i = 0; i <= size(items); ++i) {
+        cout << items[i] << endl;
+    }
+    while(true){
+        string userin;
+        cin >> userin;
+        if(student::inputcheck(in, items)){
+            switch(itemReturner(in, items)){
+                case 0:
+                    cout << "CURRENT ID: " + studentID << endl;
+                    cout << "ENTER NEW ID!" << endl;
+                    cin >> placeholder;
+                    studentID = placeholder;
+                    cout << "NEW ID IS: " + studentID << endl;
+                    break;
+                case 1:
+                    cout << "CURRENT NAME: " + firstName + " " + lastname<< endl;
+                    cout << "ENTER NEW FIRST NAME!" << endl;
+                    cin >> placeholder;
+                    firstName = placeholder;
+                    cout << "ENTER NEW LAST NAME!" <<endl;
+                    cin >> placeholder;
+                    lastname = placeholder;
+                    cout << "NEW NAME IS: " + firstName + " " +lastname << endl;
+                    break;
+                case 2:
+                    cout << "CURRENT EMAIL: " + emailAddress << endl;
+                    cout << "ENTER NEW EMAIL!" << endl;
+                    cin >> placeholder;
+                    emailAddress = placeholder;
+                    cout << "NEW EMAIL IS: " + emailAddress << endl;
+                    break;
+                case 3:
+                    cout << "CURRENT AGE: " + to_string(age) << endl;
+                    cout << "ENTER NEW AGE!" << endl;
+                    cin >> age;
+                    age = stoi(placeholder);
+                    cout << "NEW AGE IS: " + to_string(age) << endl;
+                    break;
+                case 4:
+                    cout << "DEGREE PROGRAM: " + to_string(major) << endl;
+                    cout << "ENTER NEW DEGREE PROGRAM!" << endl;
+                    cin >> placeholder;
+                    int index;
+                    index = stoi(placeholder);
+                    major = degreeprogram;
+                    cout << "NEW ID IS: " + to_string(major) << endl;
                     break;
                 case  5:
                     cout << "Average: " <<endl; //Make sure to verify they want the average of the three days or the total.
@@ -55,10 +119,5 @@ void student::itemReturner(std::string& in, std::string arr[]) {
                     break;
             }
         }
-
     }
-
-}
-void student::setItem() {
-    ;
 }

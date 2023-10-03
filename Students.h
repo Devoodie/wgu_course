@@ -22,7 +22,7 @@ class student {
             age(ayge), daystoComplete{completion[0], completion[1], completion[3]}, major(degree) {};
     void printItem();
     static bool inputcheck(std::string& in, std::string arr[]);
-    void itemReturner(std::string& in, std::string arr[]);
-    void setItem();
+    int itemReturner(std::string& in, std::string arr[]);
+    void setItem(string& in, degreeprogram);
 };
 #endif //WGUCLASS_STUDENTS_H
