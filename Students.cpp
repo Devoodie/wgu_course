@@ -72,15 +72,15 @@ void student::setItem(string& in, degreeprogram) {
         if(student::inputcheck(in, items)){
             switch(itemReturner(in, items)){
                 case 0:
-                    cout << "CURRENT ID: " + studentID << endl;
-                    cout << "ENTER NEW ID!" << endl;
+                    cout << "CURRENT ID: " + studentID << endl
+                    << "ENTER NEW ID!" << endl;
                     cin >> placeholder;
                     studentID = placeholder;
                     cout << "NEW ID IS: " + studentID << endl;
                     break;
                 case 1:
-                    cout << "CURRENT NAME: " + firstName + " " + lastname<< endl;
-                    cout << "ENTER NEW FIRST NAME!" << endl;
+                    cout << "CURRENT NAME: " + firstName + " " + lastname<< endl
+                    << "ENTER NEW FIRST NAME!" << endl;
                     cin >> placeholder;
                     firstName = placeholder;
                     cout << "ENTER NEW LAST NAME!" <<endl;
@@ -89,26 +89,26 @@ void student::setItem(string& in, degreeprogram) {
                     cout << "NEW NAME IS: " + firstName + " " +lastname << endl;
                     break;
                 case 2:
-                    cout << "CURRENT EMAIL: " + emailAddress << endl;
-                    cout << "ENTER NEW EMAIL!" << endl;
+                    cout << "CURRENT EMAIL: " + emailAddress << endl
+                    << "ENTER NEW EMAIL!" << endl;
                     cin >> placeholder;
                     emailAddress = placeholder;
                     cout << "NEW EMAIL IS: " + emailAddress << endl;
                     break;
                 case 3:
-                    cout << "CURRENT AGE: " + to_string(age) << endl;
-                    cout << "ENTER NEW AGE!" << endl;
+                    cout << "CURRENT AGE: " + to_string(age) << endl
+                    << "ENTER NEW AGE!" << endl;
                     cin >> age;
                     age = stoi(placeholder);
                     cout << "NEW AGE IS: " + to_string(age) << endl;
                     break;
                 case 4:
-                    cout << "DEGREE PROGRAM: " + to_string(major) << endl;
-                    cout << "ENTER NEW DEGREE PROGRAM!" << endl;
+                    cout << "DEGREE PROGRAM: " + to_string(major) << endl << "ENTER NEW DEGREE PROGRAM! (integer)" << endl
+                    << "1: SECURITY" << endl << "2: NETWORK" << endl << "3: SOFTWARE" << endl;
                     cin >> placeholder;
                     int index;
                     index = stoi(placeholder);
-                    major = degreeprogram;
+                    major = degreeprogram(index);
                     cout << "NEW ID IS: " + to_string(major) << endl;
                     break;
                 case  5:
