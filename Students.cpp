@@ -54,7 +54,7 @@ int student::itemReturner(std::string& in, std::string arr[]) {
                     return i;
                 default:
                     cout << "Something went wrong!" << endl;
-                    return i;
+                    return -1;
             }
         }
     }
@@ -62,6 +62,15 @@ int student::itemReturner(std::string& in, std::string arr[]) {
 }
 void student::setItem(string& in, degreeprogram) {
     string placeholder;
+    int index;
+    auto check = [](int a) -> bool {
+        for (int i = 1; i <= 3; ++i) {
+            if (i == a){
+                return true;
+            }
+        }
+        return false;
+    };
     cout << "Select data to edit from " + firstName + " " + lastname + "! (lowercase only)" << endl;
     for (int i = 0; i <= size(items); ++i) {
         cout << items[i] << endl;
@@ -106,10 +115,20 @@ void student::setItem(string& in, degreeprogram) {
                     cout << "DEGREE PROGRAM: " + to_string(major) << endl << "ENTER NEW DEGREE PROGRAM! (integer)" << endl
                     << "1: SECURITY" << endl << "2: NETWORK" << endl << "3: SOFTWARE" << endl;
                     cin >> placeholder;
-                    int index;
                     index = stoi(placeholder);
-                    major = degreeprogram(index);
-                    cout << "NEW ID IS: " + to_string(major) << endl;
+                    while(true){
+                        if (check(index)){
+                            cout << "Valid input found!" << endl;
+                            major = degreeprogram(index);
+                        }
+                        else{
+                            cout << "Please input a valid number: " << endl
+                            << "1: SECURITY" << endl << "2: NETWORK" << endl << "3: SOFTWARE" << endl;
+                            cin >> placeholder;
+                            index = stoi(placeholder);
+                        }
+                    }
+                    cout << "NEW DEGREE PROGRAM IS: " + to_string(major) << endl;
                     break;
                 case  5:
                     cout << "Average: " <<endl; //Make sure to verify they want the average of the three days or the total.
