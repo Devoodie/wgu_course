@@ -60,7 +60,7 @@ int student::itemReturner(std::string& in, std::string arr[]) {
     }
     return -1;
 }
-void student::setItem(string& in, degreeprogram) {
+void student::setItem(string& in) {
     string placeholder;
     int index;
     auto check = [](int a) -> bool {
@@ -120,6 +120,7 @@ void student::setItem(string& in, degreeprogram) {
                         if (check(index)){
                             cout << "Valid input found!" << endl;
                             major = degreeprogram(index);
+                            break;
                         }
                         else{
                             cout << "Please input a valid number: " << endl
@@ -137,6 +138,7 @@ void student::setItem(string& in, degreeprogram) {
                     cout << "Something went wrong!" << endl;
                     break;
             }
+            break;
         }
     }
 }

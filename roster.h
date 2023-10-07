@@ -5,7 +5,7 @@
 #ifndef WGUCLASS_ROSTER_H
 #define WGUCLASS_ROSTER_H
 #include <vector>
-#include "students.h"
+#include "Students.cpp"
 #include "degree.h"
 using namespace std;
 class classRoster {

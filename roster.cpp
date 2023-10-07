@@ -20,14 +20,14 @@ student parser(string& input){
     string lstname;
     string email;
     unsigned age;
-    string ageplaceholder;
+    string placeholder;
     unsigned completion[3];
-    string complplaceholder;
     degreeprogram degree;
     int variiter = 0;
     for (int i = 0; i <= size(input); ++i){
         if(input[i] == ','){
             variiter++;
+            placeholder = "";
         }
         else{
             switch(variiter){
@@ -44,15 +44,43 @@ student parser(string& input){
                     email += input[i];
                     break;
                 case 4:
-                    ageplaceholder += input[i];
-                    age = stoi(ageplaceholder);
+                    placeholder += input[i];
+                    age = stoi(placeholder);
                     break;
                 case 5:
-                    complplaceholder += input[i];
-                    completion[0] = stoi(complplaceholder);
+                    placeholder += input[i];
+                    completion[0] = stoi(placeholder);
+                    break;
+                case 6:
+                    placeholder += input[i];
+                    completion[1] = stoi(placeholder);
+                    break;
+                case 7:
+                    placeholder;
+                    completion[0] = stoi(placeholder);
+                case 8:
+                    if(placeholder == "SECURITY") {
+                        degree = degreeprogram(1);
+                        break;
+                    }
+                    else if(placeholder == "NETWORK"){
+                        degree = degreeprogram(2);
+                    }
+                    else if(placeholder == "SOFTWARE"){
+                        degree = degreeprogram(3);
+                        break;
+                    }
+                    else{
+                        placeholder += input[i];
+                        break;
+                    }
+                default:
+                    cout << "Something went wrong!" << endl;
             }
         }
 
     }
+    return student(id,fstname,lstname,email,age,completion,degree);
 }
+
 
