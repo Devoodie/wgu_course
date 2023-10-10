@@ -1,9 +1,7 @@
 //
 // Created by devan on 9/19/2023.
 //
-#include "main.cpp"
 #include "Students.h"
-#include "degree.h"
 string items[] = {"id", "name", "email", "age", "major", "average"};
 void student::printItem() {
     cout << "Select data to fetch from " + firstName + " " + lastname + "! (lowercase only)" << endl;
