@@ -3,17 +3,7 @@
 //
 #include "roster.h"
 #include <memory>
-void add(std::string data[]){
-    std::unique_ptr<student> a;
-    for(auto i = data->begin(); i != data->end(); ++i){
-
-    }
-
-};
-void remove(std::string& studentID){
-
-};
-student parser(string& input){
+student classRoster::parser(string& input){
     string id;
     string fstname;
     string lstname;
@@ -79,7 +69,14 @@ student parser(string& input){
         }
 
     }
-    return student(id,fstname,lstname,email,age,completion,degree);
+    return {id,fstname,lstname,email,age,completion,degree};
 }
 
-
+void add(std::string data[]){
+    std::unique_ptr<student> a;
+    for(auto i = data->begin(); i != data->end(); ++i){
+        classRoster::parser(reinterpret_cast<string &>(*i)) ;
+    }
+};
+void remove(std::string& studentID){
+};

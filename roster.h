@@ -15,7 +15,7 @@ public:
     void remove(string& studentID){};
     void printall();
     void printInvalidEmails();
-    student parser(string& input);
+    static student parser(string& input);
 };
 
 
