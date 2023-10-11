@@ -8,10 +8,9 @@
 #include "Students.h"
 using namespace std;
 class classRoster {
-    vector<student*> roster;
-    classRoster() : roster({}) {};
 public:
-    void add(string data[]){};
+    static vector<student*> roster;
+    static void add(string data[]);
     void remove(string& studentID){};
     void printall();
     void printInvalidEmails();

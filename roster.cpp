@@ -3,6 +3,7 @@
 //
 #include "roster.h"
 #include <memory>
+vector<student*> classRoster::roster;
 student classRoster::parser(string& input){
     string id;
     string fstname;
@@ -14,6 +15,7 @@ student classRoster::parser(string& input){
     degreeprogram degree;
     int variiter = 0;
     for (int i = 0; i <= size(input); ++i){
+        cout << i << endl;
         if(input[i] == ','){
             variiter++;
             placeholder = "";
@@ -71,11 +73,12 @@ student classRoster::parser(string& input){
     }
     return {id,fstname,lstname,email,age,completion,degree};
 }
-
-void add(std::string data[]){
-    std::unique_ptr<student> a;
+void classRoster::add(std::string data[]){
+    int iter = 0;
     for(auto i = data->begin(); i != data->end(); ++i){
-        classRoster::parser(reinterpret_cast<string &>(*i)) ;
+        classRoster::roster.push_back(new student(classRoster::parser(reinterpret_cast<string &>(*i))));
+        cout << classRoster::roster[0] << endl;
+        iter++;
     }
 };
 void remove(std::string& studentID){
