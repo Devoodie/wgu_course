@@ -3,8 +3,8 @@
 //
 #include "roster.h"
 #include <memory>
-vector<student*> classRoster::roster;
-student classRoster::parser(string& input){
+#include <iterator>
+student classRoster::parser(string input) {
     string id;
     string fstname;
     string lstname;
@@ -14,14 +14,13 @@ student classRoster::parser(string& input){
     unsigned completion[3];
     degreeprogram degree;
     int variiter = 0;
-    for (int i = 0; i <= size(input); ++i){
+    for (int i = 0; i <= size(input); ++i) {
         cout << i << endl;
-        if(input[i] == ','){
+        if (input[i] == ',') {
             variiter++;
             placeholder = "";
-        }
-        else{
-            switch(variiter){
+        } else {
+            switch (variiter) {
                 case 0:
                     id += input[i];
                     break;
@@ -47,21 +46,19 @@ student classRoster::parser(string& input){
                     completion[1] = stoi(placeholder);
                     break;
                 case 7:
-                    placeholder;
-                    completion[0] = stoi(placeholder);
+                    placeholder+= input[i];
+                    completion[2] = stoi(placeholder);
+                    break;
                 case 8:
-                    if(placeholder == "SECURITY") {
+                    if (placeholder == "SECURITY") {
                         degree = degreeprogram(1);
                         break;
-                    }
-                    else if(placeholder == "NETWORK"){
+                    } else if (placeholder == "NETWORK") {
                         degree = degreeprogram(2);
-                    }
-                    else if(placeholder == "SOFTWARE"){
+                    } else if (placeholder == "SOFTWARE") {
                         degree = degreeprogram(3);
                         break;
-                    }
-                    else{
+                    } else {
                         placeholder += input[i];
                         break;
                     }
@@ -74,12 +71,9 @@ student classRoster::parser(string& input){
     return {id,fstname,lstname,email,age,completion,degree};
 }
 void classRoster::add(std::string data[]){
-    int iter = 0;
-    for(auto i = data->begin(); i != data->end(); ++i){
-        classRoster::roster.push_back(new student(classRoster::parser(reinterpret_cast<string &>(*i))));
+    for(int i = 0; i <= data->size() ; ++i){
+        classRoster::roster.push_back(new student(classRoster::parser(data[i])));
         cout << classRoster::roster[0] << endl;
-        iter++;
     }
-};
-void remove(std::string& studentID){
-};
+}
+
