@@ -5,11 +5,12 @@
 #ifndef WGUCLASS_ROSTER_H
 #define WGUCLASS_ROSTER_H
 #include <vector>
+#include <memory>
 #include "Students.h"
 using namespace std;
 class classRoster {
 public:
-    static vector<student*> roster;
+    static vector<unique_ptr<student>> roster;
     static void add(string data[]);
     void remove(string& studentID){};
     void printall();
