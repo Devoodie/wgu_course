@@ -69,10 +69,13 @@ student classRoster::parser(string input) {
     }
     return {id,fstname,lstname,email,age,completion,degree};
 }
-void classRoster::add(std::string data[]){
-    for(int i = 0; i <= data->size() ; ++i){
-        classRoster::roster.push_back(new student(classRoster::parser(data[i])));
-        cout << classRoster::roster[0] << endl;
+void classRoster::add(std::vector<std:: string>& data){
+    for(int i = 0; i < size(data) ; ++i){
+        classRoster::roster.push_back(unique_ptr<student>(new student(classRoster::parser(data[i]))));
     }
 }
+void remove(string& studentID){
+    for(int i = 0; i < size(studentID); ++i){
 
+    }
+}

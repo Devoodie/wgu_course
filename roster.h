@@ -11,8 +11,8 @@ using namespace std;
 class classRoster {
 public:
     static vector<unique_ptr<student>> roster;
-    static void add(string data[]);
-    void remove(string& studentID){};
+    static void add(std::vector<std:: string>& data);
+    void remove(string& studentID);
     void printall();
     void printInvalidEmails();
     static student parser(string input);
