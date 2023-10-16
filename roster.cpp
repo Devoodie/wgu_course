@@ -74,8 +74,20 @@ void classRoster::add(std::vector<std:: string>& data){
         classRoster::roster.push_back(unique_ptr<student>(new student(classRoster::parser(data[i]))));
     }
 }
+
+
 void remove(string& studentID){
     for(int i = 0; i < size(studentID); ++i){
+        ;
+    }
+}
 
+void classRoster::printall(){
+    for(int i = 0; i < size(classRoster::roster); ++i){
+        student rosta = *classRoster::roster[i];
+        cout << rosta.studentID + "    First Name: " + rosta.firstName + "     Last Name: "
+        + rosta.lastname + "     Age: " + to_string(rosta.age) +"     days in course: " +
+        to_string(rosta.daystoComplete[0]) + " " + to_string(rosta.daystoComplete[1]) + " "+
+        to_string(rosta.daystoComplete[2]) + to_string(rosta.major)<<endl;
     }
 }
