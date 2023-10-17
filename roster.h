@@ -13,7 +13,7 @@ public:
     static vector<unique_ptr<student>> roster;
     static void add(std::vector<std:: string>& data);
     void remove(string& studentID);
-    void printall();
+    static void printall();
     void printInvalidEmails();
     static student parser(string input);
 };

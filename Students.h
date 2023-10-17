@@ -11,16 +11,16 @@ using namespace std;
 class student {
 public:
     student(string sID, string fName, string lName, string email,
-            unsigned ayge, unsigned completion[3], degreeprogram degree) :
+            unsigned ayge, int completion[3], degreeprogram degree) :
             studentID(std::move(sID)), firstName(std::move(fName)), lastname(std::move(lName)),
             emailAddress(std::move(email)),
-            age(ayge), daystoComplete{completion[0], completion[1], completion[3]}, major(degree) {};
+            age(ayge), daystoComplete{completion[0], completion[1], completion[2]}, major(degree) {};
     string studentID;
     string firstName;
     string lastname;
     string emailAddress;
     unsigned age;
-    unsigned daystoComplete[3];
+    int daystoComplete[3];
     degreeprogram major;
     void printItem();
     static bool inputcheck(std::string& in, std::string arr[]);
