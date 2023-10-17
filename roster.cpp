@@ -77,11 +77,14 @@ void classRoster::add(std::vector<std:: string>& data){
     }
 }
 
-void remove(string& studentID){
-    for(int i = 0; i < size(studentID); ++i){
-        ;
-    }
+void classRoster::remove(string studentID){
+    for(auto i = classRoster::roster.begin(); i != classRoster::roster.end(); ++i){
+        student student = reinterpret_cast<class student &>(*i);
+        if(student.studentID == studentID)
+            classRoster::roster.erase(i);
+        }
 }
+
 
 void classRoster::printall(){
     string placeholder;

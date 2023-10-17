@@ -5,5 +5,7 @@ int main() {
     std::cout << "Hello, World!" << std::endl;
     classRoster::add(studentData);
     classRoster::printall();
+    classRoster::remove("A3");
+    classRoster::printall();
     return 0;
 }
