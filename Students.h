@@ -26,5 +26,6 @@ public:
     static bool inputcheck(std::string& in, std::string arr[]);
     int itemReturner(std::string& in, std::string arr[]);
     void setItem(string& in);
+    string getItem(string in);
 };
 #endif //WGUCLASS_STUDENTS_H

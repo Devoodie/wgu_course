@@ -1,7 +1,18 @@
 # ninja log v5
-11	571	7191697331561025	CMakeFiles/wguclass.dir/roster.cpp.obj	1d3f123a1b9d1b49
+4	675	7191889979681543	CMakeFiles/wguclass.dir/roster.cpp.obj	1d3f123a1b9d1b49
 7	531	7191697331160979	CMakeFiles/wguclass.dir/main.cpp.obj	332ba6fe90b6ada0
 3	476	7191697330610911	CMakeFiles/wguclass.dir/Students.cpp.obj	e6b057d503c8e671
 321	407	7186680029149673	wguclass.exe	7bbd14b06a2afba3
-7	2619	7191889110325721	CMakeFiles/wguclass.dir/roster.cpp.obj	1d3f123a1b9d1b49
-4	675	7191889979681543	CMakeFiles/wguclass.dir/roster.cpp.obj	1d3f123a1b9d1b49
+2	387	7192665961570375	CMakeFiles/wguclass.dir/Students.cpp.obj	e6b057d503c8e671
+6	470	7192665962400341	CMakeFiles/wguclass.dir/main.cpp.obj	332ba6fe90b6ada0
+9	540	7192665963090339	CMakeFiles/wguclass.dir/roster.cpp.obj	1d3f123a1b9d1b49
+540	666	7192665964330492	wguclass.exe	7bbd14b06a2afba3
+2	492	7192673407397278	CMakeFiles/wguclass.dir/roster.cpp.obj	1d3f123a1b9d1b49
+492	729	7192673409757089	wguclass.exe	7bbd14b06a2afba3
+3	528	7192678900515295	CMakeFiles/wguclass.dir/roster.cpp.obj	1d3f123a1b9d1b49
+529	641	7192678901625299	wguclass.exe	7bbd14b06a2afba3
+1	415	7192687115716588	CMakeFiles/wguclass.dir/main.cpp.obj	332ba6fe90b6ada0
+5	477	7192687116326598	CMakeFiles/wguclass.dir/roster.cpp.obj	1d3f123a1b9d1b49
+477	569	7192687117236652	wguclass.exe	7bbd14b06a2afba3
+2	395	7192687366726712	CMakeFiles/wguclass.dir/main.cpp.obj	332ba6fe90b6ada0
+395	478	7192687367526671	wguclass.exe	7bbd14b06a2afba3

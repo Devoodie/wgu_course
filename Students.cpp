@@ -140,3 +140,31 @@ void student::setItem(string& in) {
         }
     }
 }
+string student::getItem(std::string in) {
+    if(in == "id"){
+        return this->studentID;
+    }
+    else if(in == "fname"){
+        return this->firstName;
+    }
+    else if(in == "lname"){
+        return this->lastname;
+    }
+    else if(in == "email"){
+        return this->emailAddress;
+    }
+    else if(in == "age"){
+        return to_string(this->age);
+    }
+    else if (in == "major"){
+        if(this->major == 1){
+            return "SECURITY";
+        }
+        else if(this->major == 2){
+            return "NETWORK";
+        }
+        else if (this->major)
+    }
+}
+
+

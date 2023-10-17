@@ -77,12 +77,15 @@ void classRoster::add(std::vector<std:: string>& data){
     }
 }
 
-void classRoster::remove(string studentID){
-    for(auto i = classRoster::roster.begin(); i != classRoster::roster.end(); ++i){
-        student student = reinterpret_cast<class student &>(*i);
-        if(student.studentID == studentID)
-            classRoster::roster.erase(i);
+void classRoster::remove(string studentID) {
+    for (int i = 0; i < size(classRoster::roster); ++i) {
+        student student = *classRoster::roster[i];
+        if (student. == studentID) {
+            classRoster::roster.erase(classRoster::roster.begin() + i);
+            return;
         }
+    }
+    cout << "No Such Student ID Found!" << endl;
 }
 
 
