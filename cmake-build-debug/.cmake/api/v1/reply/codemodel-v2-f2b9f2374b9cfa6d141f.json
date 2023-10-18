@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "D:/wguclass/cmake-build-debug",
-		"source" : "D:/wguclass"
+		"build" : "E:/wgu_course/cmake-build-debug",
+		"source" : "E:/wgu_course"
 	},
 	"version" : 
 	{

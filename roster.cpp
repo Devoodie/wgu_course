@@ -80,14 +80,13 @@ void classRoster::add(std::vector<std:: string>& data){
 void classRoster::remove(string studentID) {
     for (int i = 0; i < size(classRoster::roster); ++i) {
         student student = *classRoster::roster[i];
-        if (student. == studentID) {
+        if (student.getItem("id") == studentID) {
             classRoster::roster.erase(classRoster::roster.begin() + i);
             return;
         }
     }
     cout << "No Such Student ID Found!" << endl;
 }
-
 
 void classRoster::printall(){
     string placeholder;
@@ -106,5 +105,35 @@ void classRoster::printall(){
         + rosta.lastname + "     Age: " + to_string(rosta.age) +"     days in course: " +
         to_string(rosta.daystoComplete[0]) + " " + to_string(rosta.daystoComplete[1]) + " " +
         to_string(rosta.daystoComplete[2]) + " Degree Program: " + placeholder <<endl;
+    }
+}
+
+void classRoster::printInvalidEmails() {
+    for(int i = 0; i < size(classRoster::roster); ++i){
+        student& student = *classRoster::roster[i];
+        for(int a = 0, ats = 0, dots = 0; a < size(student.getItem("email")); ++a){
+            string email = student.getItem("email");
+            if(email[a] == ' '){
+                cout << student.getItem("id") +  " " + email << endl;
+                break;
+            }
+            else if (email[a] == '@'){
+                ats = 1;
+                continue;
+            }
+            else if (email[a] == '.'){
+                dots = 1;
+                continue;
+            }
+            else if(a == size(email)-1){
+                if(dots != 1 && ats != 1){
+                    cout << student.getItem("id") +  " " + email << endl;
+                    break;
+                }
+            }
+            if(ats == 1 && dots == 1) {
+                break;
+            }
+        }
     }
 }

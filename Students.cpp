@@ -163,8 +163,14 @@ string student::getItem(std::string in) {
         else if(this->major == 2){
             return "NETWORK";
         }
-        else if (this->major)
+        else if (this->major == 3){
+            return "SOFTWARE";
+        }
     }
+    else if (in == "average"){
+        return to_string(this->daystoComplete[0]) + "," + to_string(this->daystoComplete[1]) + "," + to_string(this->daystoComplete[2]);
+    }
+    return "something went wrong.";
 }
 
 

@@ -14,7 +14,7 @@ public:
     static void add(std::vector<std:: string>& data);
     static void remove(string studentID);
     static void printall();
-    void printInvalidEmails();
+    static void printInvalidEmails();
     static student parser(string input);
 };
 
