@@ -14,8 +14,7 @@ student classRoster::parser(string input) {
     int completion[3];
     degreeprogram degree;
     int variiter = 0;
-    for (int i = 0; i <= size(input); ++i) {
-        cout << i << endl;
+    for (int i = 0; i < size(input); ++i) {
         if (input[i] == ',') {
             variiter++;
             placeholder = "";
@@ -126,7 +125,7 @@ void classRoster::printInvalidEmails() {
                 continue;
             }
             else if(a == size(email)-1){
-                if(dots != 1 && ats != 1){
+                if(dots != 1 || ats != 1){
                     cout << student.getItem("id") +  " " + email << endl;
                     break;
                 }
@@ -134,6 +133,41 @@ void classRoster::printInvalidEmails() {
             if(ats == 1 && dots == 1) {
                 break;
             }
+        }
+    }
+}
+
+void classRoster::printAverageDaysInCourse(std::string in) { //this literally makes zero sense just increasing complexity for no reason
+    auto check = [](string nums){
+        int val1;
+        int val2;
+        int val3;
+        string placeholder;
+        for(int i = 0, iter = 0; i < size(nums); ++i){
+            if(nums[i] == ','){
+                placeholder = "";
+                iter++;
+                continue;
+            }
+            else if(iter == 0){
+                placeholder += nums[i];
+                val1 = stoi(placeholder);
+            }
+            else if(iter == 1){
+                placeholder += nums[i];
+                val2 = stoi(placeholder);
+            }
+            else if(iter == 2){
+                placeholder += nums[i];
+                val3 = stoi(placeholder);
+            }
+        }
+        cout << (val1 + val2 + val3)/3 <<endl;
+    };
+    for(int i = 0; i < size(classRoster::roster); ++i){
+        student& student = *classRoster::roster[i];
+        if(student.getItem("id") == in){
+            check(student.getItem("average"));
         }
     }
 }

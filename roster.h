@@ -16,6 +16,8 @@ public:
     static void printall();
     static void printInvalidEmails();
     static student parser(string input);
+    static void printAverageDaysInCourse(string in);
+
 };
 
 

@@ -9,6 +9,10 @@ int main() {
     classRoster::add(studentData);
     classRoster::printall();
     classRoster::printInvalidEmails();
+    for(int i = 0; i < size(classRoster::roster); ++i){
+        student& student = *classRoster::roster[i];
+        classRoster::printAverageDaysInCourse(student.getItem("id"));
+    }
     classRoster::remove("A3");
     classRoster::printall();
     classRoster::remove("A3");
