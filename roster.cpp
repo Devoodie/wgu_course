@@ -1,4 +1,4 @@
-//
+
 // Created by devan on 9/19/2023.
 //
 #include "roster.h"
@@ -49,20 +49,20 @@ student classRoster::parser(string input) {
                     completion[2] = stoi(placeholder);
                     break;
                 case 8:
+                    placeholder += input[i];
                     if (placeholder == "SECURITY") {
-                        degree = degreeprogram(1);
+                        degree = SECURITY;
                         break;
                     } else if (placeholder == "NETWORK") {
-                        degree = degreeprogram(2);
+                        degree = NETWORK;
                     } else if (placeholder == "SOFTWARE") {
-                        degree = degreeprogram(3);
-                        break;
-                    } else {
-                        placeholder += input[i];
+                        degree = SOFTWARE;
                         break;
                     }
+                    break;
                 default:
                     cout << "Something went wrong!" << endl;
+                    break;
             }
         }
 
@@ -77,43 +77,39 @@ void classRoster::add(std::vector<std:: string>& data){
 }
 
 void classRoster::remove(string studentID) {
+    cout << "Removing " + studentID + "!" << endl;
     for (int i = 0; i < size(classRoster::roster); ++i) {
         student student = *classRoster::roster[i];
         if (student.getItem("id") == studentID) {
             classRoster::roster.erase(classRoster::roster.begin() + i);
+            cout << endl;
             return;
         }
     }
     cout << "No Such Student ID Found!" << endl;
+    cout << endl;
 }
 
 void classRoster::printall(){
     string placeholder;
+    cout << "Displaying all students:" << endl;
     for(int i = 0; i < size(classRoster::roster); ++i){
         student rosta = *classRoster::roster[i];
-        if(rosta.major == 1){
-            placeholder = "SECURITY";
-        }
-        else if(rosta.major == 2){
-            placeholder = "NETWORK";
-        }
-        else if(rosta.major == 3){
-            placeholder ="SOFTWARE";
-        }
-        cout << rosta.studentID + "    First Name: " + rosta.firstName + "     Last Name: "
-        + rosta.lastname + "     Age: " + to_string(rosta.age) +"     days in course: " +
-        to_string(rosta.daystoComplete[0]) + " " + to_string(rosta.daystoComplete[1]) + " " +
-        to_string(rosta.daystoComplete[2]) + " Degree Program: " + placeholder <<endl;
+        cout << rosta.getItem("id")+ "    First Name: " + rosta.getItem("fname")+ "     Last Name: "
+                +  rosta.getItem("lname") + "     Age: " + rosta.getItem("age") +"     days in course: {" +
+                rosta.getItem("average") + "} " + "Degree Program: " + rosta.getItem("major") <<endl;
     }
+    cout <<endl;
 }
 
 void classRoster::printInvalidEmails() {
+    cout << "Displaying Invalid Emails:" <<endl;
     for(int i = 0; i < size(classRoster::roster); ++i){
         student& student = *classRoster::roster[i];
         for(int a = 0, ats = 0, dots = 0; a < size(student.getItem("email")); ++a){
             string email = student.getItem("email");
             if(email[a] == ' '){
-                cout << student.getItem("id") +  " " + email << endl;
+                cout << student.getItem("id") +  " " + email + " - is invalid." << endl;
                 break;
             }
             else if (email[a] == '@'){
@@ -126,7 +122,7 @@ void classRoster::printInvalidEmails() {
             }
             else if(a == size(email)-1){
                 if(dots != 1 || ats != 1){
-                    cout << student.getItem("id") +  " " + email << endl;
+                    cout << student.getItem("id") +  " " + email  + " - is inavalid." << endl;
                     break;
                 }
             }
@@ -135,6 +131,7 @@ void classRoster::printInvalidEmails() {
             }
         }
     }
+    cout << endl;
 }
 
 void classRoster::printAverageDaysInCourse(std::string in) { //this literally makes zero sense just increasing complexity for no reason
@@ -167,7 +164,30 @@ void classRoster::printAverageDaysInCourse(std::string in) { //this literally ma
     for(int i = 0; i < size(classRoster::roster); ++i){
         student& student = *classRoster::roster[i];
         if(student.getItem("id") == in){
+            cout << "Student ID: " + student.getItem("id") + ", average days in course is : ";
             check(student.getItem("average"));
         }
     }
+}
+
+void classRoster::printByDegreeProgram(degreeprogram in){
+    for(int i = 0 ; i < size(classRoster::roster); ++i){
+        student& student = *classRoster::roster[i];
+        if(student.getItem("major") == "SOFTWARE" && in == SOFTWARE){
+            cout << student.getItem("id")+ "    First Name: " + student.getItem("fname")+ "     Last Name: "
+                    +  student.getItem("lname") + "     Age: " + student.getItem("age") +"     days in course: {" +
+                    student.getItem("average") + "} " + "Degree Program: " + student.getItem("major") <<endl;
+        }
+        else if(student.getItem("major") == "NETWORK" && in == NETWORK){
+            cout << student.getItem("id")+ "    First Name: " + student.getItem("fname")+ "     Last Name: "
+                    +  student.getItem("lname") + "     Age: " + student.getItem("age") +"     days in course: {" +
+                    student.getItem("average") + "} " + "Degree Program: " + student.getItem("major") <<endl;
+        }
+        else if (student.getItem("major") == " SECURITY" && in == SECURITY){
+            cout << student.getItem("id")+ "    First Name: " + student.getItem("fname")+ "     Last Name: "
+                    +  student.getItem("lname") + "     Age: " + student.getItem("age") +"     days in course: {" +
+                    student.getItem("average") + "} " + "Degree Program: " + student.getItem("major") <<endl;
+        }
+    }
+    cout <<endl;
 }

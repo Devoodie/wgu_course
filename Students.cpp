@@ -80,14 +80,14 @@ void student::setItem(string& in) {
             switch(itemReturner(in, items)){
                 case 0:
                     cout << "CURRENT ID: " + studentID << endl
-                    << "ENTER NEW ID!" << endl;
+                         << "ENTER NEW ID!" << endl;
                     cin >> placeholder;
                     studentID = placeholder;
                     cout << "NEW ID IS: " + studentID << endl;
                     break;
                 case 1:
                     cout << "CURRENT NAME: " + firstName + " " + lastname<< endl
-                    << "ENTER NEW FIRST NAME!" << endl;
+                         << "ENTER NEW FIRST NAME!" << endl;
                     cin >> placeholder;
                     firstName = placeholder;
                     cout << "ENTER NEW LAST NAME!" <<endl;
@@ -97,21 +97,21 @@ void student::setItem(string& in) {
                     break;
                 case 2:
                     cout << "CURRENT EMAIL: " + emailAddress << endl
-                    << "ENTER NEW EMAIL!" << endl;
+                         << "ENTER NEW EMAIL!" << endl;
                     cin >> placeholder;
                     emailAddress = placeholder;
                     cout << "NEW EMAIL IS: " + emailAddress << endl;
                     break;
                 case 3:
                     cout << "CURRENT AGE: " + to_string(age) << endl
-                    << "ENTER NEW AGE!" << endl;
+                         << "ENTER NEW AGE!" << endl;
                     cin >> age;
                     age = stoi(placeholder);
                     cout << "NEW AGE IS: " + to_string(age) << endl;
                     break;
                 case 4:
                     cout << "DEGREE PROGRAM: " + to_string(major) << endl << "ENTER NEW DEGREE PROGRAM! (integer)" << endl
-                    << "1: SECURITY" << endl << "2: NETWORK" << endl << "3: SOFTWARE" << endl;
+                         << "1: SECURITY" << endl << "2: NETWORK" << endl << "3: SOFTWARE" << endl;
                     cin >> placeholder;
                     index = stoi(placeholder);
                     while(true){
@@ -122,7 +122,7 @@ void student::setItem(string& in) {
                         }
                         else{
                             cout << "Please input a valid number: " << endl
-                            << "1: SECURITY" << endl << "2: NETWORK" << endl << "3: SOFTWARE" << endl;
+                                 << "1: SECURITY" << endl << "2: NETWORK" << endl << "3: SOFTWARE" << endl;
                             cin >> placeholder;
                             index = stoi(placeholder);
                         }
@@ -157,13 +157,13 @@ string student::getItem(std::string in) {
         return to_string(this->age);
     }
     else if (in == "major"){
-        if(this->major == 1){
+        if(this->major == SECURITY){
             return "SECURITY";
         }
-        else if(this->major == 2){
+        else if(this->major == NETWORK){
             return "NETWORK";
         }
-        else if (this->major == 3){
+        else if (this->major == SOFTWARE){
             return "SOFTWARE";
         }
     }
