@@ -1,4 +1,4 @@
-# C868 - Scripting And Programming - Applications
+# C867 - Scripting And Programming - Applications
 
 This is a project I did for my course at WGU! 
 
